@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="nofollow" href=''>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<style>
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        width: 300px;
+        border: 1px solid black;
+        margin: 0 auto;
+        padding: 0 auto;
+        padding-right: 40px;
+    }
+    
+    .card {
+        background: #fff;
+        border-radius: 2px;
+        display: inline-block;
+        height: 300px;
+        margin: 1rem;
+        position: relative;
+    }
+    /* .card-1 {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    } */
+    
+    .card-1:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+    
+    .header {
+        background: url('http://cdn1.iconfinder.com/data/icons/vaga/arrow_up.png') no-repeat;
+        background-position: right;
+        cursor: pointer;
+    }
+    
+    .collapsed .header {
+        background-image: url('http://cdn2.iconfinder.com/data/icons/vaga/arrow_down.png');
+    }
+    
+    .content {
+        height: auto;
+        min-height: 100px;
+        overflow: hidden;
+        transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        padding: 15px;
+    }
+    
+    .collapsed .content {
+        min-height: 0px;
+        height: 0px;
+    }
+    
+    .header {
+        padding: 21px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="header">Ver Menos</div>
+
+        <div class="content card card-1">
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque
+                rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt
+                ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias error harum maxime adipisci amet laborum.
+                Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit </p>
+        </div>
+    </div>
+
+    <div class="container collapsed">
+        <div class="header">Ver Mais</div>
+        <div class="content">
+            <p> Some content here </p>
+        </div>
+    </div>
+
+    <div class="container collapsed">
+        <div class="header">Ver Mais</div>
+        <div class="content">
+            <p> Some content here </p>
+        </div>
+    </div>
+
+    <!-- <!--<div class="container collapsed">
+  <div class="header">Bla blah</div>
+    <div class="content">
+    <p> Some content here </p>
+  </div>
+</div> -->
+
+    <script>
+        $(function() {
+            $('.header').click(function() {
+                $(this).text($(this).text() == 'Ver Mais' ? 'Ver Menos' : 'Ver Mais');
+                $(this).closest('.container').toggleClass('collapsed');
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
